@@ -27,10 +27,10 @@
     <ClCompile Include="base_struct.cc">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="c2s_message.cc">
+    <ClCompile Include="c2s.cc">
       <Filter>头文件</Filter>
     </ClCompile>
-    <ClCompile Include="proto\test.pb.cc">
+    <ClCompile Include="proto\c2s.pb.cc">
       <Filter>头文件\proto</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,10 +41,10 @@
     <ClInclude Include="base_struct.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="c2s_message.h">
+    <ClInclude Include="c2s.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="proto\test.pb.h">
+    <ClInclude Include="proto\c2s.pb.h">
       <Filter>头文件\proto</Filter>
     </ClInclude>
   </ItemGroup>

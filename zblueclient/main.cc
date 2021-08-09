@@ -3,13 +3,13 @@
 #include <string.h>
 #include <WINSOCK2.H>
 #include "dynamic_buffer.h"
-#include "c2s_message.h"
+#include "c2s.h"
 
 #pragma comment(lib,"ws2_32.lib")
 
 #define INT_SERVER_PORT 9091
-//#define STR_SERVER_IP "127.0.0.1"
-#define STR_SERVER_IP "10.235.200.249"
+#define STR_SERVER_IP "127.0.0.1"
+//#define STR_SERVER_IP "10.235.200.249"
 #define INT_DATABUFFER_SIZE 1024
 #define STR_EXIT "exit"
 #define  WINSOCK_VERSION MAKEWORD(2,0)
@@ -52,22 +52,20 @@ void main(void)
 		WSACleanup();
 		return;
 	}
-	
+
 	char szDataBuffer[INT_DATABUFFER_SIZE];
 
 	int age = 1;
 	while (1)
 	{
-		/*memset(szDataBuffer, 0, INT_DATABUFFER_SIZE);
-		scanf("%s", szDataBuffer);*/
+		memset(szDataBuffer, 0, INT_DATABUFFER_SIZE);
+		scanf("%s", szDataBuffer);
 
-		
-		C2SLoginRequest login;
-
-		login.data.set_account("lvbu");
+		protocol::C2SLoginReqMessage login;
+		login.data.set_account("zjw123");
 		login.data.set_age(age++);
 		login.data.add_friends(age);
-		login.data.add_friends(age+1);
+		login.data.add_friends(age + 1);
 
 		login.encode(szDataBuffer, sizeof(login.data));
 
@@ -104,7 +102,7 @@ void main(void)
 
 				buffer2.readBytes(data, message_length);
 
-				C2SLoginRequest login2;
+				protocol::S2CLoginRespMessage login2;
 				login2.decode(data, message_length);
 
 				printf("recv message %s \n", login2.dump().c_str());

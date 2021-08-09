@@ -147,16 +147,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="base_struct.cc" />
-    <ClCompile Include="c2s_message.cc" />
+    <ClCompile Include="c2s.cc" />
     <ClCompile Include="dynamic_buffer.cc" />
     <ClCompile Include="main.cc" />
-    <ClCompile Include="proto\test.pb.cc" />
+    <ClCompile Include="proto\c2s.pb.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base_struct.h" />
-    <ClInclude Include="c2s_message.h" />
+    <ClInclude Include="c2s.h" />
     <ClInclude Include="dynamic_buffer.h" />
-    <ClInclude Include="proto\test.pb.h" />
+    <ClInclude Include="proto\c2s.pb.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
